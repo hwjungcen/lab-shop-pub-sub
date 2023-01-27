@@ -61,7 +61,7 @@ public class Order  {
     public void onPrePersist(){
         // Get request from Inventory
         labshoppubsub.external.Inventory inventory =
-           Application.applicationContext.getBean(labshoppubsub.external.InventoryService.class)
+           OrderApplication.applicationContext.getBean(labshoppubsub.external.InventoryService.class)
            .getInventory(Long.valueOf(getProductId()));
 
         if (inventory.getStock() < getQty()) {
