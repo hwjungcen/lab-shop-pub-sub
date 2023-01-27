@@ -34,7 +34,7 @@ mvn spring-boot:run
 ## Test by API
 - order
 ```
- http :8088/orders id="id" productId="productId" qty="qty" customerId="customerId" amount="amount" 
+ http :8088/orders id="id" productId="productId" qty="qty" customerId="customerId" amount="amount" status="status" 
 ```
 - inventory
 ```
