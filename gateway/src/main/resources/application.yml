@@ -16,6 +16,10 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/inventories/**, 
+        - id: delivery
+          uri: http://localhost:8083
+          predicates:
+            - Path=/deliveries/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -47,6 +51,10 @@ spring:
           uri: http://inventory:8080
           predicates:
             - Path=/inventories/**, 
+        - id: delivery
+          uri: http://delivery:8080
+          predicates:
+            - Path=/deliveries/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:
