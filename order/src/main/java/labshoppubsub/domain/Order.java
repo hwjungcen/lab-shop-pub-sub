@@ -92,17 +92,15 @@ public class Order  {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process */
         
-        repository().findById(deliveryStarted.get???()).ifPresent(order->{
+        repository().findById(Long.valueOf(deliveryStarted.getOrderId())).ifPresent(order->{
             
-            order // do something
+            order.setStatus("DeliveryStarted"); // do something
             repository().save(order);
 
 
          });
-        */
-
         
     }
 
