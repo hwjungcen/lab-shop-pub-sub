@@ -1,5 +1,6 @@
 package labshoppubsub.domain;
 
+import labshoppubsub.domain.DeliveryStarted;
 import labshoppubsub.DeliveryApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -36,6 +37,14 @@ public class Delivery  {
     
     private String orderId;
 
+    @PostPersist
+    public void onPostPersist(){
+
+
+        DeliveryStarted deliveryStarted = new DeliveryStarted(this);
+        deliveryStarted.publishAfterCommit();
+
+    }
 
     public static DeliveryRepository repository(){
         DeliveryRepository deliveryRepository = DeliveryApplication.applicationContext.getBean(DeliveryRepository.class);
